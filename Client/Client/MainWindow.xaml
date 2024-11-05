@@ -1,0 +1,30 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="Auto" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Text="Parametres :" Margin="0,0,0,10"/>
+            <TextBox x:Name="arg1TextBox" Margin="0,0,0,10" />
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10">
+            <Button Content="Test" Margin="0,5" Click="testApi"/>
+            <Button Content="cryptWith3DESmodeEBC" Margin="0,5"/>
+            <Button Content="cryptWithAESmodeCBC" Margin="0,5"/>
+            <Button Content="hashWithSHA1" Margin="0,5"/>
+            <Button Content="authWithHMAC" Margin="0,5"/>
+            <Button Content="signedWithSHAandRSA" Margin="0,5"/>
+            <Button Content="cryptWithRSA" Margin="0,5"/>
+        </StackPanel>
+    </Grid>
+</Window>
