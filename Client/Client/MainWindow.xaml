@@ -21,7 +21,7 @@
             <Button Content="Test" Margin="0,5" Click="testApi"/>
             <Button Content="cryptWith3DESmodeEBC" Margin="0,5"/>
             <Button Content="cryptWithAESmodeCBC" Margin="0,5"/>
-            <Button Content="hashWithSHA1" Margin="0,5"/>
+            <Button Content="hashWithSHA1" Margin="0,5"  Click="Sha1"/>
             <Button Content="authWithHMAC" Margin="0,5"/>
             <Button Content="signedWithSHAandRSA" Margin="0,5"/>
             <Button Content="cryptWithRSA" Margin="0,5"/>

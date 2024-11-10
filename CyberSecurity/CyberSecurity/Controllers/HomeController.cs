@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CyberSecurity.Service;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CyberSecurity.Controllers
 {
@@ -6,7 +7,13 @@ namespace CyberSecurity.Controllers
     [ApiController]
     public class HomeController : Controller
     {
+
+        private Crypto_service _cryptoService;
         
+        public HomeController(Crypto_service service )
+        {
+            _cryptoService = service;
+        }
         // api de test pour checker si la communication avec l'app passe bien 
         [HttpPut("testApi")]
         public String testApi( [FromBody] String param)
@@ -30,10 +37,24 @@ namespace CyberSecurity.Controllers
         }
         
         [HttpPut("hashWithSHA1")]
-        public bool hashWithSHA1()
+        public bool hashWithSHA1(string param)
         {
-            //todo :msg haché avec sh&1
-            return true;
+            // pour vérifier que le hachage est correct on rehash de ce coté avec une valeur que on connait
+           // un hash peut coorespondre a 2 valeurs en entré ( collision ) 
+           // donc aucun moyen detre sur de  trouver le mdp via un hash masi on peut trouver un ensemble de valeur
+            string password = "cyber";
+            string storedHash =_cryptoService.Sha1Hash(password);
+
+            Console.WriteLine($"Mot de passe haché : {storedHash}");
+            Console.WriteLine($"hash reçu : {param}");
+
+            if (storedHash != param)
+            {
+                  return false;
+            }
+            
+                return true;
+            
         }
           
         [HttpPut("authWithHMAC")]
