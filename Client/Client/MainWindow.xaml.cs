@@ -18,9 +18,7 @@ public partial class MainWindow : Window
         {
             string arg1 = arg1TextBox.Text;
             Console.WriteLine($"texte : {arg1}");
-
-            string url = $"https://localhost:44329/api/Home/testApi";
-
+            string url = $"https://localhost:5274/api/Home/testApi";
             string responseData = await _apiService.PutDataAsync(url, arg1);
             Console.WriteLine($"reponse : {responseData}");
         }
