@@ -1,67 +1,101 @@
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\appsettings.json
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.exe
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.deps.json
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.runtimeconfig.json
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.pdb
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.csproj.AssemblyReference.cache
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.AssemblyInfoInputs.cache
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.AssemblyInfo.cs
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.csproj.CoreCompileInputs.cache
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.CyberSecurity.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.build.CyberSecurity.props
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CyberSecurity.props
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CyberSecurity.props
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\scopedcss\bundle\CyberSecurity.styles.css
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSec.078FFD24.Up2Date
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\refint\CyberSecurity.dll
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.pdb
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.genruntimeconfig.cache
-C:\Users\user\RiderProjects\CyberSecurity\CyberSecurity\obj\Debug\net8.0\ref\CyberSecurity.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\appsettings.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.exe
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.deps.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.runtimeconfig.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\CyberSecurity.pdb
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.csproj.AssemblyReference.cache
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.AssemblyInfoInputs.cache
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.AssemblyInfo.cs
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.sourcelink.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.CyberSecurity.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.build.CyberSecurity.props
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CyberSecurity.props
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CyberSecurity.props
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\scopedcss\bundle\CyberSecurity.styles.css
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSec.078FFD24.Up2Date
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\refint\CyberSecurity.dll
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.pdb
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\CyberSecurity.genruntimeconfig.cache
-C:\Users\user\Desktop\CyberAlgo\CyberSecurity\CyberSecurity\obj\Debug\net8.0\ref\CyberSecurity.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/appsettings.Development.json
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/appsettings.json
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.exe
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.deps.json
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.runtimeconfig.json
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.pdb
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Microsoft.OpenApi.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.csproj.AssemblyReference.cache
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.AssemblyInfoInputs.cache
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.AssemblyInfo.cs
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.csproj.CoreCompileInputs.cache
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.build.json
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.development.json
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.CyberSecurity.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.build.CyberSecurity.props
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.CyberSecurity.props
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.CyberSecurity.props
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.pack.json
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/scopedcss/bundle/CyberSecurity.styles.css
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSec.078FFD24.Up2Date
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/refint/CyberSecurity.dll
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.pdb
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.genruntimeconfig.cache
+C:/Users/user/RiderProjects/CyberSecurity/CyberSecurity/obj/Debug/net8.0/ref/CyberSecurity.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/appsettings.Development.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/appsettings.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.exe
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.deps.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.runtimeconfig.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.pdb
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Microsoft.OpenApi.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.csproj.AssemblyReference.cache
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.AssemblyInfoInputs.cache
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.AssemblyInfo.cs
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.csproj.CoreCompileInputs.cache
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.sourcelink.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.build.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.development.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.CyberSecurity.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.build.CyberSecurity.props
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.CyberSecurity.props
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.CyberSecurity.props
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.pack.json
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/scopedcss/bundle/CyberSecurity.styles.css
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSec.078FFD24.Up2Date
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/refint/CyberSecurity.dll
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.pdb
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.genruntimeconfig.cache
+C:/Users/user/Desktop/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/ref/CyberSecurity.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/appsettings.Development.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/appsettings.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.deps.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.runtimeconfig.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/CyberSecurity.pdb
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.csproj.AssemblyReference.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.AssemblyInfoInputs.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.AssemblyInfo.cs
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.csproj.CoreCompileInputs.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.MvcApplicationPartsAssemblyInfo.cs
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.MvcApplicationPartsAssemblyInfo.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.sourcelink.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.build.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.development.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.CyberSecurity.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.build.CyberSecurity.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.CyberSecurity.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.CyberSecurity.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/scopedcss/bundle/CyberSecurity.styles.css
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSec.078FFD24.Up2Date
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/refint/CyberSecurity.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.pdb
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/CyberSecurity.genruntimeconfig.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/Debug/net8.0/ref/CyberSecurity.dll
