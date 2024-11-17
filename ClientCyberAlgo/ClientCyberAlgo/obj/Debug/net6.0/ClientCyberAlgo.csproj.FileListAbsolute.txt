@@ -1,34 +1,68 @@
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\appsettings.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\ClientCyberAlgo.exe
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\ClientCyberAlgo.deps.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\ClientCyberAlgo.runtimeconfig.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\ClientCyberAlgo.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\ClientCyberAlgo.pdb
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\Microsoft.OpenApi.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.csproj.AssemblyReference.cache
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.AssemblyInfoInputs.cache
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.AssemblyInfo.cs
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.sourcelink.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\staticwebassets.build.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\staticwebassets\msbuild.ClientCyberAlgo.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\staticwebassets\msbuild.build.ClientCyberAlgo.props
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ClientCyberAlgo.props
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ClientCyberAlgo.props
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\scopedcss\bundle\ClientCyberAlgo.styles.css
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCy.D3BE09A3.Up2Date
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\refint\ClientCyberAlgo.dll
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.pdb
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ClientCyberAlgo.genruntimeconfig.cache
-C:\Users\user\Desktop\CyberAlgo\ClientCyberAlgo\ClientCyberAlgo\obj\Debug\net6.0\ref\ClientCyberAlgo.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/appsettings.Development.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/appsettings.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.exe
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.deps.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.runtimeconfig.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.pdb
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Microsoft.OpenApi.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Newtonsoft.Json.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.csproj.AssemblyReference.cache
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.AssemblyInfoInputs.cache
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.AssemblyInfo.cs
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.csproj.CoreCompileInputs.cache
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.sourcelink.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets.build.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets.development.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.ClientCyberAlgo.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.build.ClientCyberAlgo.props
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.ClientCyberAlgo.props
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.ClientCyberAlgo.props
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets.pack.json
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/scopedcss/bundle/ClientCyberAlgo.styles.css
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCy.D3BE09A3.Up2Date
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/refint/ClientCyberAlgo.dll
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.pdb
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.genruntimeconfig.cache
+C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ref/ClientCyberAlgo.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/appsettings.Development.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/appsettings.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.deps.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.runtimeconfig.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/ClientCyberAlgo.pdb
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.csproj.AssemblyReference.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.AssemblyInfoInputs.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.AssemblyInfo.cs
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.csproj.CoreCompileInputs.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.MvcApplicationPartsAssemblyInfo.cs
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.MvcApplicationPartsAssemblyInfo.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.sourcelink.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets.build.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets.development.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.ClientCyberAlgo.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.build.ClientCyberAlgo.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.ClientCyberAlgo.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.ClientCyberAlgo.props
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/scopedcss/bundle/ClientCyberAlgo.styles.css
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCy.D3BE09A3.Up2Date
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/refint/ClientCyberAlgo.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.pdb
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.genruntimeconfig.cache
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ref/ClientCyberAlgo.dll
