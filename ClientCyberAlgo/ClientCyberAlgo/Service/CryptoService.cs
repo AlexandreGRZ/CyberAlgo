@@ -16,61 +16,42 @@ namespace ClientCyberAlgo.Service
                
             }
         }
-        public string Des3Crypt(string text)
+        public string AesEncrypt(string text, string key, out string iv)
         {
             try
             {
-                byte[] key = Encoding.UTF8.GetBytes("123456789012345678901234");
-                byte[] textBytes = Encoding.UTF8.GetBytes(text);
+                if (string.IsNullOrEmpty(text))
+                    throw new ArgumentException("Le texte à chiffrer est vide ou nul.");
+                if (string.IsNullOrEmpty(key))
+                    throw new ArgumentException("La clé est vide ou nulle.");
 
-                using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
-                {
-                    tdes.Key = key;
-                    tdes.Mode = CipherMode.ECB;
-                    tdes.Padding = PaddingMode.PKCS7;
-
-                    ICryptoTransform encryptor = tdes.CreateEncryptor();
-                    byte[] encryptedBytes = encryptor.TransformFinalBlock(textBytes, 0, textBytes.Length);
-
-                    return Convert.ToBase64String(encryptedBytes);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erreur de chiffrement : {ex.Message}");
-                return null;
-            }
-        } 
-        public string AesEncrypt(string text, string key, string iv)
-        {
-            try
-            {
                 byte[] keyBytes = Encoding.UTF8.GetBytes(key);
-                byte[] ivBytes = Encoding.UTF8.GetBytes(iv);
 
                 if (keyBytes.Length != 16 && keyBytes.Length != 24 && keyBytes.Length != 32)
                 {
-                    throw new ArgumentException("La clé doit être de 16, 24 ou 32 octets.");
+                    throw new ArgumentException("La clé doit être de 16, 24 ou 32 octets (128, 192 ou 256 bits).");
                 }
-
-                byte[] textBytes = Encoding.UTF8.GetBytes(text);
 
                 using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
                 {
+                    aes.GenerateIV();
+                    iv = Convert.ToBase64String(aes.IV);
                     aes.Key = keyBytes;
-                    aes.IV = ivBytes;
                     aes.Mode = CipherMode.CBC;
                     aes.Padding = PaddingMode.PKCS7;
+
+                    byte[] textBytes = Encoding.UTF8.GetBytes(text);
 
                     ICryptoTransform encryptor = aes.CreateEncryptor();
                     byte[] encryptedBytes = encryptor.TransformFinalBlock(textBytes, 0, textBytes.Length);
 
-                    return Convert.ToBase64String(encryptedBytes);
+                    return Convert.ToBase64String(aes.IV.Concat(encryptedBytes).ToArray());
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Erreur de chiffrement : {ex.Message}");
+                iv = null;
                 return null;
             }
         }

@@ -55,29 +55,6 @@ namespace ClientCyberAlgo.Controllers
                 return "false"; 
             }
         }
-        [HttpPut("Send3DES")]
-        
-        public async Task<string> DES3(string arg1)
-        {
-            try
-            {
-                Console.WriteLine($"Texte brut : {arg1}");
-        
-                string hashedMessage = _cryptoService.Des3Crypt(arg1);
-                Console.WriteLine($"Texte chiffré avec 3DES : {hashedMessage}");
-
-                string url = $"http://localhost:5274/api/Home/cryptWith3DESmodeEBC";
-                string responseData = await _apiService.PutDataAsync(url, hashedMessage);
-        
-                Console.WriteLine($"Réponse du serveur : {responseData}");
-                return responseData;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erreur : {ex.Message}");
-                return "Erreur lors de l'envoi";
-            }
-        } 
         [HttpPut("SendAES")]
         public async Task<string> SendAES(string arg1)
         {
@@ -88,7 +65,7 @@ namespace ClientCyberAlgo.Controllers
                 string key = "1234567890123456";
                 string iv = "abcdef9876543210";
 
-                string encryptedMessage = _cryptoService.AesEncrypt(arg1, key, iv);
+                string encryptedMessage = _cryptoService.AesEncrypt(arg1, key,out iv);
                 Console.WriteLine($"Message chiffré avec AES : {encryptedMessage}");
 
                 string url = "http://localhost:5274/api/Home/cryptWithAESmodeCBC";
