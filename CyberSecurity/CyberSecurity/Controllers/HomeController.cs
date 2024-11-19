@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace CyberSecurity.Controllers
 {
@@ -22,13 +25,47 @@ namespace CyberSecurity.Controllers
             //todo :  msg chiffré avec 3DES en mode EBC , les clés sont hardcodé
             return true;
         }
+
         [HttpPut("cryptWithAESmodeCBC")]
-        public bool cryptWithAESmodeCBC()
+        public IActionResult DecryptAndVerifyMessage([FromBody] string encryptedMessage)
         {
-            //todo : msg chiffré avec AES en mode CBC , clé généré avec diffie hellman
-            return true;
+            try
+            {
+                if (string.IsNullOrEmpty(encryptedMessage))
+                    return BadRequest("Le message est vide ou invalide.");
+
+                string key = "1234567890123456";
+
+                byte[] keyBytes = Encoding.UTF8.GetBytes(key);
+
+                byte[] encryptedBytes = Convert.FromBase64String(encryptedMessage);
+
+                byte[] ivBytes = encryptedBytes.Take(16).ToArray();
+                byte[] cipherBytes = encryptedBytes.Skip(16).ToArray();
+
+                using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
+                {
+                    aes.Key = keyBytes;
+                    aes.IV = ivBytes;
+                    aes.Mode = CipherMode.CBC;
+                    aes.Padding = PaddingMode.PKCS7;
+
+                    ICryptoTransform decryptor = aes.CreateDecryptor();
+                    byte[] decryptedBytes = decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
+
+                    string decryptedMessage = Encoding.UTF8.GetString(decryptedBytes);
+
+                    Console.WriteLine($"Message déchiffré : {decryptedMessage}");
+                    return Ok(decryptedMessage.Equals("cyber", StringComparison.OrdinalIgnoreCase) ? "true" : "false");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur de déchiffrement : {ex.Message}");
+                return StatusCode(500, "Erreur interne du serveur");
+            }
         }
-        
+
         [HttpPut("hashWithSHA1")]
         public bool hashWithSHA1()
         {

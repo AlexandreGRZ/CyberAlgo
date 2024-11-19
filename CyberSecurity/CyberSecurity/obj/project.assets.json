@@ -460,27 +460,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "/Users/mathysfrc/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\CyberAlgo\\CyberSecurity\\CyberSecurity\\CyberSecurity.csproj",
+      "projectUniqueName": "/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/CyberSecurity.csproj",
       "projectName": "CyberSecurity",
-      "projectPath": "C:\\Users\\user\\Desktop\\CyberAlgo\\CyberSecurity\\CyberSecurity\\CyberSecurity.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\CyberAlgo\\CyberSecurity\\CyberSecurity\\obj\\",
+      "projectPath": "/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/CyberSecurity.csproj",
+      "packagesPath": "/Users/mathysfrc/.nuget/packages/",
+      "outputPath": "/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/CyberSecurity/CyberSecurity/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mathysfrc/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -532,7 +529,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/mathysfrc/.dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
