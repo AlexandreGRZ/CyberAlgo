@@ -55,6 +55,35 @@ namespace ClientCyberAlgo.Controllers
                 return "false"; 
             }
         }
-             
+        [HttpPut("Send3DES")]
+        public async Task<string> Send3DES(string arg1)
+        {
+            try
+            {
+                Console.WriteLine($"Texte brut : {arg1}");
+
+                string key = "123456789012345678901234"; 
+
+                string encryptedMessage = _cryptoService.TripleDESEncrypt(arg1, key);
+                if (string.IsNullOrEmpty(encryptedMessage))
+                {
+                    throw new Exception("Le chiffrement a échoué.");
+                }
+
+                Console.WriteLine($"Message chiffré avec 3DES : {encryptedMessage}");
+
+                string url = "http://localhost:5274/api/Home/cryptWith3DESmodeEBC";
+        
+                string responseData = await _apiService.PutDataAsync(url, encryptedMessage);
+
+                Console.WriteLine($"Réponse du serveur : {responseData}");
+                return responseData;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur : {ex.Message}");
+                return "Erreur lors de l'envoi";
+            }
+        }     
     }
 }
