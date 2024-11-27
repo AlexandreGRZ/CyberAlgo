@@ -23,7 +23,7 @@ namespace ClientCyberAlgo.Controllers
             try
             {
                 Console.WriteLine($"texte : {arg1}");
-                string url = $"https://localhost:7129/api/Home/testApi";
+                string url = $"http://localhost:5274/api/Home/testApi";
                 string responseData = await _apiService.PutDataAsync(url, arg1);
                 Console.WriteLine($"reponse : {responseData} ");
                 return responseData;
@@ -36,16 +36,23 @@ namespace ClientCyberAlgo.Controllers
         }
     
         [HttpPut("SendHashSha1")]
-        public async Task<string> Sha1(string arg1)
+        public async Task<string> Sha1(string arg1 , bool integrity)
         {
             try
             {
+                
                 Console.WriteLine($"texte avant hachage  : {arg1}");
                 string  msgHash = _cryptoService.Sha1Hash(arg1);
                 Console.WriteLine($"reponse : {msgHash}\t nb bits : {msgHash.Length}");
-            
-                string url = $"https://localhost:7129/api/Home/hashWithSHA1?param="+msgHash;
-                string responseData = await _apiService.PutDataAsync(url, arg1);
+
+                if (!integrity)
+                {
+                    arg1 += " false";
+                    Console.WriteLine($"texte apres changement  : {arg1}");
+                }
+                
+                string url = $"http://localhost:5274/api/Home/hashWithSHA1?message="+arg1+"&hash="+msgHash;
+                string responseData = await _apiService.PutDataAsync(url, null);
                 Console.WriteLine($"mdp correspond : {responseData}\t");
                 return responseData;
             }
