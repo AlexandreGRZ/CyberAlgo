@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClientCyberAlgo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+258c754c0aadc9331f12412ee766623ea9e0be36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f079ddcdc312a4b94415874fd444252769951af")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClientCyberAlgo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClientCyberAlgo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,11 +8,29 @@
     ".NETCoreApp,Version=v6.0": {
       "ClientCyberAlgo/1.0.0": {
         "dependencies": {
+          "BouncyCastle": "1.8.9",
+          "BouncyCastle.Crypto": "1.8.0-beta4",
           "Newtonsoft.Json": "13.0.3",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
           "ClientCyberAlgo.dll": {}
+        }
+      },
+      "BouncyCastle/1.8.9": {
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.9.0",
+            "fileVersion": "1.8.20343.1"
+          }
+        }
+      },
+      "BouncyCastle.Crypto/1.8.0-beta4": {
+        "runtime": {
+          "lib/net40/crypto.dll": {
+            "assemblyVersion": "1.8.5520.19156",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -77,6 +95,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BouncyCastle/1.8.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "path": "bouncycastle/1.8.9",
+      "hashPath": "bouncycastle.1.8.9.nupkg.sha512"
+    },
+    "BouncyCastle.Crypto/1.8.0-beta4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IsucAkoO0MR555FYBr5P0/acGanq4aTH6E5BMD5ZXCj7DumRMtc25rR4PtPXY1HD4xp36kivsZMfIxF0aJKB9Q==",
+      "path": "bouncycastle.crypto/1.8.0-beta4",
+      "hashPath": "bouncycastle.crypto.1.8.0-beta4.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",

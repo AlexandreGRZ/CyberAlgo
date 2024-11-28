@@ -2,6 +2,28 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "BouncyCastle.Crypto/1.8.0-beta4": {
+        "type": "package",
+        "compile": {
+          "lib/net40/crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -105,6 +127,32 @@
     }
   },
   "libraries": {
+    "BouncyCastle/1.8.9": {
+      "sha512": "axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "type": "package",
+      "path": "bouncycastle/1.8.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bouncycastle.1.8.9.nupkg.sha512",
+        "bouncycastle.nuspec",
+        "lib/BouncyCastle.Crypto.dll"
+      ]
+    },
+    "BouncyCastle.Crypto/1.8.0-beta4": {
+      "sha512": "IsucAkoO0MR555FYBr5P0/acGanq4aTH6E5BMD5ZXCj7DumRMtc25rR4PtPXY1HD4xp36kivsZMfIxF0aJKB9Q==",
+      "type": "package",
+      "path": "bouncycastle.crypto/1.8.0-beta4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bouncycastle.crypto.1.8.0-beta4.nupkg.sha512",
+        "bouncycastle.crypto.nuspec",
+        "lib/net40/crypto.dll",
+        "lib/net40/crypto.xml"
+      ]
+    },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "sha512": "Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
       "type": "package",
@@ -476,6 +524,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BouncyCastle >= 1.8.9",
+      "BouncyCastle.Crypto >= 1.8.0-beta4",
       "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -522,6 +572,14 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "BouncyCastle": {
+            "target": "Package",
+            "version": "[1.8.9, )"
+          },
+          "BouncyCastle.Crypto": {
+            "target": "Package",
+            "version": "[1.8.0-beta4, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -553,5 +611,57 @@
         "runtimeIdentifierGraphPath": "/Users/mathysfrc/.dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-8xfc-gm6g-vgpv",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m44j-cfrm-g8qc",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-v435-xc8x-wvr9",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle 1.8.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle.Crypto 1.8.0-beta4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BouncyCastle.Crypto",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

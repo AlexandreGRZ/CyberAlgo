@@ -66,3 +66,5 @@ C:/Users/user/Desktop/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0
 /Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.pdb
 /Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ClientCyberAlgo.genruntimeconfig.cache
 /Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/obj/Debug/net6.0/ref/ClientCyberAlgo.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/BouncyCastle.Crypto.dll
+/Users/mathysfrc/Desktop/HEPL/ALGO CYBER/CyberAlgo/ClientCyberAlgo/ClientCyberAlgo/bin/Debug/net6.0/crypto.dll
