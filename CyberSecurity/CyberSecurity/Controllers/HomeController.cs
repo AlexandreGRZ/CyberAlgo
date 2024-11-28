@@ -10,6 +10,9 @@ namespace CyberSecurity.Controllers
     [ApiController]
     public class HomeController : Controller
     {
+
+        
+        
         [HttpPut("testApi")]
         public String testApi([FromBody] string param)
         {
@@ -92,6 +95,21 @@ namespace CyberSecurity.Controllers
         {
             // TODO : implémenter le chiffrement avec RSA
             return true;
+        }
+        [HttpPut("diffieHellman")]
+        public double diffieHellman(double  publicKey)
+        {
+            int random = RandomNumberGenerator.GetInt32(0, 25); // 25 pris arbitrairement
+            
+            double PublicKeyServer =  Math.Pow(5,random)%23  ;
+            Console.WriteLine("clé public serveur : "+ PublicKeyServer );
+            
+            
+            double sharedKey = Math.Pow(publicKey,random) % 23;
+            Console.WriteLine("clé partagée : "+ sharedKey );
+            
+            
+            return PublicKeyServer;
         }
     }
 }

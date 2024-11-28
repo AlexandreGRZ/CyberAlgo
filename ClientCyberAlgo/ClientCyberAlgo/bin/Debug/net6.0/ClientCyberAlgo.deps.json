@@ -29,7 +29,7 @@
         "runtime": {
           "lib/net40/crypto.dll": {
             "assemblyVersion": "1.8.5520.19156",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.8.5520.19156"
           }
         }
       },

@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../buildMultiTargeting/ClientCyberAlgo.props" />
+  <Import Project="..\buildMultiTargeting\ClientCyberAlgo.props" />
 </Project>

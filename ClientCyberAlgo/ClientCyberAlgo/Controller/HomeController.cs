@@ -58,5 +58,35 @@ namespace ClientCyberAlgo.Controllers
                 return "Erreur lors de l'envoi";
             }
         }
+        [HttpPut("diffie-Hellman")]
+        public async Task<string> diffie(int key)
+        {
+            try
+            {
+               double PublicKey =  Math.Pow(5,key)%23  ;
+               
+               string url = "http://localhost:5274/api/Home/diffieHellman?publicKey="+ PublicKey;
+
+               string responseData = await _apiService.PutDataAsync(url, null);
+
+               Console.WriteLine($"Réponse du serveur : {responseData}");
+
+
+               double sharedKey = Math.Pow(int.Parse(responseData), key) % 23;
+               Console.WriteLine($"clé publicclient : {PublicKey}");
+               Console.WriteLine($"clé partagé : {sharedKey}");
+
+               return responseData;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur : {ex.Message}");
+                return "Erreur lors de l'envoi";
+            }
+        }
     }
+    
+    
+    
 }
+
