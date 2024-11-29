@@ -77,7 +77,7 @@ namespace ClientCyberAlgo.Controllers
                Console.WriteLine($"clé public client : {PublicKey}");
                Console.WriteLine($"clé partagé : {sharedKey}");
 
-               return double.Parse(responseData);
+               return double.Parse(sharedKey.ToString());
             }
             catch (Exception ex)
             {

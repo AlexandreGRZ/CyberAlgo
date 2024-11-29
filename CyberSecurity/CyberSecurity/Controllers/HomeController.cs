@@ -36,6 +36,8 @@ namespace CyberSecurity.Controllers
                 if (string.IsNullOrEmpty(encryptedMessage))
                     return BadRequest("Le message est vide ou invalide.");
 
+                
+                Console.WriteLine("message reçu : " + encryptedMessage);
                 byte[] keyBytes = _crypto_service.getAESSharedKey(sharedKey);
                 Console.WriteLine("clé partagée pour AES encryption : "+ Convert.ToBase64String(keyBytes));
                 Console.WriteLine("longueur clé partagée pour AES encryption : "+ keyBytes.Length);
