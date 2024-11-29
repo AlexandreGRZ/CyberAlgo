@@ -1,3 +1,4 @@
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -57,6 +58,18 @@ namespace ClientCyberAlgo.Service
                 iv = null;
                 return null;
             }
+        }
+
+        public byte[] getAESSharedKey(BigInteger key)
+        {
+            byte[] keyBytes = key.ToByteArray();
+
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedKey = sha256.ComputeHash(keyBytes);
+                return hashedKey;
+            }
+
         }
     }
 }

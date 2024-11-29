@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
+using CyberSecurity.Service;
 
 namespace CyberSecurity.Controllers
 {
@@ -10,8 +12,14 @@ namespace CyberSecurity.Controllers
     [ApiController]
     public class HomeController : Controller
     {
-
+    
+        private Crypto_service _crypto_service;
+        private static BigInteger sharedKey  ; 
         
+        public HomeController()
+        {
+           _crypto_service = new Crypto_service();
+        }
         
         [HttpPut("testApi")]
         public String testApi([FromBody] string param)
@@ -28,10 +36,9 @@ namespace CyberSecurity.Controllers
                 if (string.IsNullOrEmpty(encryptedMessage))
                     return BadRequest("Le message est vide ou invalide.");
 
-                string key = "1234567890123456";
-
-                byte[] keyBytes = Encoding.UTF8.GetBytes(key);
-
+                byte[] keyBytes = _crypto_service.getAESSharedKey(sharedKey);
+                Console.WriteLine("clé partagée pour AES encryption : "+ Convert.ToBase64String(keyBytes));
+                Console.WriteLine("longueur clé partagée pour AES encryption : "+ keyBytes.Length);
                 byte[] encryptedBytes = Convert.FromBase64String(encryptedMessage);
 
                 byte[] ivBytes = encryptedBytes.Take(16).ToArray();
@@ -100,16 +107,11 @@ namespace CyberSecurity.Controllers
         public double diffieHellman(double  publicKey)
         {
             int random = RandomNumberGenerator.GetInt32(0, 25); // 25 pris arbitrairement
-            
-            double PublicKeyServer =  Math.Pow(5,random)%23  ;
+            BigInteger PublicKeyServer = BigInteger.ModPow(5, random, 23);
             Console.WriteLine("clé public serveur : "+ PublicKeyServer );
-            
-            
-            double sharedKey = Math.Pow(publicKey,random) % 23;
+              sharedKey = BigInteger.ModPow(BigInteger.Parse(publicKey.ToString()), random, 23); 
             Console.WriteLine("clé partagée : "+ sharedKey );
-            
-            
-            return PublicKeyServer;
+            return Double.Parse(PublicKeyServer.ToString());
         }
     }
 }

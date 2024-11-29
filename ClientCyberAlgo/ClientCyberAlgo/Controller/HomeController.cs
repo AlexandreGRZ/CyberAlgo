@@ -1,4 +1,5 @@
-﻿using ClientCyberAlgo.Service;
+﻿using System.Numerics;
+using ClientCyberAlgo.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClientCyberAlgo.Controllers
@@ -35,11 +36,13 @@ namespace ClientCyberAlgo.Controllers
         }
 
         [HttpPut("SendAESWithDH")]
-        public async Task<string> SendAESWithDH(string arg1)
+        public async Task<string> SendAESWithDH(string arg1, int randomNumber)
         {
             try
             {
-                byte[] sharedSecret = _cryptoService.GenerateSharedSecret();
+                double secretKey = await diffiehellman(randomNumber); 
+                
+                byte[] sharedSecret = _cryptoService.getAESSharedKey(BigInteger.Parse(secretKey.ToString()));
                 Console.WriteLine($"Clé partagée générée avec Diffie-Hellman : {Convert.ToBase64String(sharedSecret)}");
 
                 string iv;
@@ -59,29 +62,27 @@ namespace ClientCyberAlgo.Controllers
             }
         }
         [HttpPut("diffie-Hellman")]
-        public async Task<string> diffie(int key)
+        public async Task<double> diffiehellman(int key)
         {
             try
             {
-               double PublicKey =  Math.Pow(5,key)%23  ;
+               BigInteger PublicKey =  BigInteger.ModPow(5, key, 23); ;
                
                string url = "http://localhost:5274/api/Home/diffieHellman?publicKey="+ PublicKey;
-
                string responseData = await _apiService.PutDataAsync(url, null);
 
                Console.WriteLine($"Réponse du serveur : {responseData}");
-
-
-               double sharedKey = Math.Pow(int.Parse(responseData), key) % 23;
-               Console.WriteLine($"clé publicclient : {PublicKey}");
+               
+               BigInteger sharedKey = BigInteger.ModPow(BigInteger.Parse(responseData), key, 23); 
+               Console.WriteLine($"clé public client : {PublicKey}");
                Console.WriteLine($"clé partagé : {sharedKey}");
 
-               return responseData;
+               return double.Parse(responseData);
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Erreur : {ex.Message}");
-                return "Erreur lors de l'envoi";
+                return -1;
             }
         }
     }
