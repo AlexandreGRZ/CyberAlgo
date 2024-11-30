@@ -1,8 +1,4 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-using ClientCyberAlgo.Service;
-using ClientCyberAlgo.Service.RSA;
-using CyberSecurity.Service.RSA;
+﻿using ClientCyberAlgo.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClientCyberAlgo.Controllers
@@ -19,7 +15,6 @@ namespace ClientCyberAlgo.Controllers
         {
             _apiService = new ApiService();
             _cryptoService = new CryptoService();
-            
         }
         
         [HttpPut("testApi")]
@@ -60,38 +55,6 @@ namespace ClientCyberAlgo.Controllers
                 string responseData = await _apiService.PutDataAsync(url, null);
                 Console.WriteLine($"mdp correspond : {responseData}\t");
                 return responseData;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return "false"; 
-            }
-        }
-        
-        [HttpPut("SendWithRSAKeystore")]
-        public async Task<string> RSAKeystore(string arg1)
-        {
-            try
-            {
-                KeystoreLoader keystoreLoader = new KeystoreLoader();
-                keystoreLoader.LoadCertificateFromP12("C:\\Workspace\\School\\MASI1\\CyberSecu\\Labo\\CyberAlgo\\RSAkeystore.p12","destinationPassword");
-                Console.WriteLine($"texte : {arg1}");
-                
-                byte[] byteArray = Encoding.UTF8.GetBytes(arg1);
-                if (keystoreLoader.PublicKey != null)
-                {
-                    byte[] bytesToSend = RSAUtils.SendMessageWithRSASignature(keystoreLoader.PublicKey, byteArray);
-                    string url = $"http://localhost:7129/api/Home/cryptWithRSA";
-                    string responseData = await _apiService.PutDataAsync(url, bytesToSend);
-                    Console.WriteLine($"reponse : {responseData} ");
-                    return responseData;
-                }
-                else
-                {
-                    Console.WriteLine("keystore loader : Public Key not found");
-                    return "false";
-                }
-                
             }
             catch (Exception ex)
             {
