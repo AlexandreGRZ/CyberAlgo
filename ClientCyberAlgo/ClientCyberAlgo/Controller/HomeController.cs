@@ -28,7 +28,7 @@ namespace ClientCyberAlgo.Controllers
             try
             {
                 Console.WriteLine($"texte : {arg1}");
-                string url = $"http://localhost:7129/api/Home/testApi";
+                string url = $"http://localhost:5274/api/Home/testApi";
                 string responseData = await _apiService.PutDataAsync(url, arg1);
                 Console.WriteLine($"reponse : {responseData} ");
                 return responseData;
@@ -40,21 +40,24 @@ namespace ClientCyberAlgo.Controllers
             }
         }
     
-        [HttpPut("SendWithSh1AndRSA")]
-        public async Task<string> Sha1(string arg1)
+        [HttpPut("SendHashSha1")]
+        public async Task<string> Sha1(string arg1 , bool integrity)
         {
             try
             {
                 
-                RSA publicKey = RSAUtils.LoadPublicKey("./Service/RSA/publicKey.pem");
                 Console.WriteLine($"texte avant hachage  : {arg1}");
-                byte[]  msgHash = _cryptoService.Sha1HashByte(arg1);
-                byte[] encryptedMessage = RSAUtils.SendMessageWithRSASignature(publicKey, msgHash);
+                string  msgHash = _cryptoService.Sha1Hash(arg1);
+                Console.WriteLine($"reponse : {msgHash}\t nb bits : {msgHash.Length}");
+
+                if (!integrity)
+                {
+                    arg1 += " false";
+                    Console.WriteLine($"texte apres changement  : {arg1}");
+                }
                 
-                Console.WriteLine("Message chiffré : " + Convert.ToBase64String(encryptedMessage));
-                RSAObjectSend param = new RSAObjectSend(arg1, encryptedMessage);
-                string url = $"http://localhost:7129/api/Home/signedWithSHAandRSA";
-                string responseData = await _apiService.PutDataAsync(url, param);
+                string url = $"http://localhost:5274/api/Home/hashWithSHA1?message="+arg1+"&hash="+msgHash;
+                string responseData = await _apiService.PutDataAsync(url, null);
                 Console.WriteLine($"mdp correspond : {responseData}\t");
                 return responseData;
             }

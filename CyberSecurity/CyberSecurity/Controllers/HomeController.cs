@@ -1,7 +1,10 @@
+
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
 using CyberSecurity.Service.RSA;
+﻿using CyberSecurity.Service;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CyberSecurity.Controllers
@@ -10,6 +13,13 @@ namespace CyberSecurity.Controllers
     [ApiController]
     public class HomeController : Controller
     {
+        
+        private Crypto_service _cryptoService;
+
+        public HomeController(Crypto_service service )
+        {
+            _cryptoService = service;
+        }
         
         // api de test pour checker si la communication avec l'app passe bien 
         [HttpPut("testApi")]
@@ -33,9 +43,17 @@ namespace CyberSecurity.Controllers
         }
         
         [HttpPut("hashWithSHA1")]
-        public bool hashWithSHA1()
+        public bool hashWithSHA1(string message ,string  hash )
         {
-            //todo :msg haché avec sh&1
+            
+            string calculatedhash =_cryptoService.Sha1Hash(message);
+            Console.WriteLine($"Mot de passe haché : {calculatedhash}");
+            Console.WriteLine($"hash reçu : {hash}");
+            if (calculatedhash != hash)
+            {
+                return false;
+            }
+            
             return true;
         }
           
