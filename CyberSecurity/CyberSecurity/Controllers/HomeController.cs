@@ -1,8 +1,11 @@
 using CyberSecurity.Service;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
+using CyberSecurity.Service;
 
 namespace CyberSecurity.Controllers
 {
@@ -10,28 +13,20 @@ namespace CyberSecurity.Controllers
     [ApiController]
     public class HomeController : Controller
     {
+    
+        private Crypto_service _crypto_service;
+        private static BigInteger sharedKey  ; 
         
-        private Crypto_service _cryptoService;
-
-        public HomeController(Crypto_service service )
+        public HomeController()
         {
-            _cryptoService = service;
+           _crypto_service = new Crypto_service();
         }
         
-        // api de test pour checker si la communication avec l'app passe bien 
         [HttpPut("testApi")]
-        public String testApi( [FromBody] String param)
+        public String testApi([FromBody] string param)
         {
-            
             Console.WriteLine(param);
             return param;
-        }
-        
-        [HttpPut("cryptWith3DESmodeEBC")]
-        public bool cryptWith3DESmodeEBC()
-        {
-            //todo :  msg chiffré avec 3DES en mode EBC , les clés sont hardcodé
-            return true;
         }
 
         [HttpPut("cryptWithAESmodeCBC")]
@@ -42,10 +37,11 @@ namespace CyberSecurity.Controllers
                 if (string.IsNullOrEmpty(encryptedMessage))
                     return BadRequest("Le message est vide ou invalide.");
 
-                string key = "1234567890123456";
-
-                byte[] keyBytes = Encoding.UTF8.GetBytes(key);
-
+                
+                Console.WriteLine("message reçu : " + encryptedMessage);
+                byte[] keyBytes = _crypto_service.getAESSharedKey(sharedKey);
+                Console.WriteLine("clé partagée pour AES encryption : "+ Convert.ToBase64String(keyBytes));
+                Console.WriteLine("longueur clé partagée pour AES encryption : "+ keyBytes.Length);
                 byte[] encryptedBytes = Convert.FromBase64String(encryptedMessage);
 
                 byte[] ivBytes = encryptedBytes.Take(16).ToArray();
@@ -59,11 +55,13 @@ namespace CyberSecurity.Controllers
                     aes.Padding = PaddingMode.PKCS7;
 
                     ICryptoTransform decryptor = aes.CreateDecryptor();
+
                     byte[] decryptedBytes = decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
 
                     string decryptedMessage = Encoding.UTF8.GetString(decryptedBytes);
 
                     Console.WriteLine($"Message déchiffré : {decryptedMessage}");
+
                     return Ok(decryptedMessage.Equals("cyber", StringComparison.OrdinalIgnoreCase) ? "true" : "false");
                 }
             }
@@ -74,8 +72,15 @@ namespace CyberSecurity.Controllers
             }
         }
 
+        [HttpPut("cryptWith3DESmodeEBC")]
+        public bool cryptWith3DESmodeEBC()
+        {
+            // TODO : implémenter le chiffrement avec 3DES en mode EBC
+            return true;
+        }
+
         [HttpPut("hashWithSHA1")]
-        public bool hashWithSHA1(string message ,string  hash )
+        public bool hashWithSHA1()
         {
             
             string calculatedhash =_cryptoService.Sha1Hash(message);
@@ -88,26 +93,36 @@ namespace CyberSecurity.Controllers
             
             return true;
         }
-          
+
         [HttpPut("authWithHMAC")]
         public bool authWithHMAC()
         {
-            //todo : msg authentifié avec un hmac MD5 la clé peut etre hardcodé 
+            // TODO : implémenter l'authentification avec HMAC
             return true;
         }
+
         [HttpPut("signedWithSHAandRSA")]
         public bool signedWithSHAandRSA()
         {
             //todo : msg signé avec sha 1 et RSA , clé peuvent eter hardcodé ou transmise sur le réseaux
             return true;
         }
+
         [HttpPut("cryptWithRSA")]
         public bool cryptWithRSA()
         {
-            // todo : le msg est chiffré a l'aide de RSA , la clé publique provient
-            // d'un certificat save dans un keystore
+            // TODO : implémenter le chiffrement avec RSA
             return true;
         }
-             
+        [HttpPut("diffieHellman")]
+        public double diffieHellman(double  publicKey)
+        {
+            int random = RandomNumberGenerator.GetInt32(0, 25); // 25 pris arbitrairement
+            BigInteger PublicKeyServer = BigInteger.ModPow(5, random, 23);
+            Console.WriteLine("clé public serveur : "+ PublicKeyServer );
+              sharedKey = BigInteger.ModPow(BigInteger.Parse(publicKey.ToString()), random, 23); 
+            Console.WriteLine("clé partagée : "+ sharedKey );
+            return Double.Parse(PublicKeyServer.ToString());
+        }
     }
 }

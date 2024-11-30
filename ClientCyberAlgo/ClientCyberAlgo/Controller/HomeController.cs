@@ -1,4 +1,5 @@
-﻿using ClientCyberAlgo.Service;
+﻿using System.Numerics;
+using ClientCyberAlgo.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClientCyberAlgo.Controllers
@@ -10,13 +11,13 @@ namespace ClientCyberAlgo.Controllers
 
         public ApiService _apiService { get; set; }
         private CryptoService _cryptoService { get; set; }
-        
+
         public HomeController()
         {
             _apiService = new ApiService();
             _cryptoService = new CryptoService();
         }
-        
+
         [HttpPut("testApi")]
         public async Task<string> testApi(string arg1)
         {
@@ -59,21 +60,23 @@ namespace ClientCyberAlgo.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return "false"; 
+                return "false";
             }
         }
-        [HttpPut("SendAES")]
-        public async Task<string> SendAES(string arg1)
+
+        [HttpPut("SendAESWithDH")]
+        public async Task<string> SendAESWithDH(string arg1, int randomNumber)
         {
             try
             {
-                Console.WriteLine($"Texte brut : {arg1}");
+                double secretKey = await diffiehellman(randomNumber); 
+                
+                byte[] sharedSecret = _cryptoService.getAESSharedKey(BigInteger.Parse(secretKey.ToString()));
+                Console.WriteLine($"Clé partagée générée avec Diffie-Hellman : {Convert.ToBase64String(sharedSecret)}");
 
-                string key = "1234567890123456";
-                string iv = "abcdef9876543210";
-
-                string encryptedMessage = _cryptoService.AesEncrypt(arg1, key,out iv);
-                Console.WriteLine($"Message chiffré avec AES : {encryptedMessage}");
+                string iv;
+                string encryptedMessage = _cryptoService.AesEncryptWithSharedKey(arg1, sharedSecret, out iv);
+                Console.WriteLine($"Message chiffré avec AES et clé partagée : {encryptedMessage}");
 
                 string url = "http://localhost:5274/api/Home/cryptWithAESmodeCBC";
                 string responseData = await _apiService.PutDataAsync(url, encryptedMessage);
@@ -85,6 +88,30 @@ namespace ClientCyberAlgo.Controllers
             {
                 Console.WriteLine($"Erreur : {ex.Message}");
                 return "Erreur lors de l'envoi";
+            }
+        }
+        [HttpPut("diffie-Hellman")]
+        public async Task<double> diffiehellman(int key)
+        {
+            try
+            {
+               BigInteger PublicKey =  BigInteger.ModPow(5, key, 23); ;
+               
+               string url = "http://localhost:5274/api/Home/diffieHellman?publicKey="+ PublicKey;
+               string responseData = await _apiService.PutDataAsync(url, null);
+
+               Console.WriteLine($"Réponse du serveur : {responseData}");
+               
+               BigInteger sharedKey = BigInteger.ModPow(BigInteger.Parse(responseData), key, 23); 
+               Console.WriteLine($"clé public client : {PublicKey}");
+               Console.WriteLine($"clé partagé : {sharedKey}");
+
+               return double.Parse(sharedKey.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur : {ex.Message}");
+                return -1;
             }
         }
     }

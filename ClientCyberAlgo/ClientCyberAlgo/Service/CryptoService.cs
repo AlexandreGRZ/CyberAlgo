@@ -1,4 +1,4 @@
-
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -12,31 +12,35 @@ namespace ClientCyberAlgo.Service
             using (SHA1 sha1 = SHA1.Create())
             {
                 byte[] hashBytes = sha1.ComputeHash(textBytes);
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower(); // s'affiche sous le format XX-XX-XX... on retire donc les - 
-               
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
         }
-        public string AesEncrypt(string text, string key, out string iv)
+
+        public byte[] GenerateSharedSecret()
+        {
+            // Utilisation de ECDiffieHellman sans dépendance à CNG
+            using (ECDiffieHellman ecdh = ECDiffieHellman.Create())
+            {
+                ecdh.KeySize = 256;
+                byte[] publicKey = ecdh.PublicKey.ToByteArray();
+                return publicKey;
+            }
+        }
+
+        public string AesEncryptWithSharedKey(string text, byte[] sharedSecret, out string iv)
         {
             try
             {
                 if (string.IsNullOrEmpty(text))
                     throw new ArgumentException("Le texte à chiffrer est vide ou nul.");
-                if (string.IsNullOrEmpty(key))
-                    throw new ArgumentException("La clé est vide ou nulle.");
-
-                byte[] keyBytes = Encoding.UTF8.GetBytes(key);
-
-                if (keyBytes.Length != 16 && keyBytes.Length != 24 && keyBytes.Length != 32)
-                {
-                    throw new ArgumentException("La clé doit être de 16, 24 ou 32 octets (128, 192 ou 256 bits).");
-                }
+                if (sharedSecret == null || sharedSecret.Length == 0)
+                    throw new ArgumentException("La clé partagée est vide ou nulle.");
 
                 using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
                 {
                     aes.GenerateIV();
                     iv = Convert.ToBase64String(aes.IV);
-                    aes.Key = keyBytes;
+                    aes.Key = sharedSecret;
                     aes.Mode = CipherMode.CBC;
                     aes.Padding = PaddingMode.PKCS7;
 
@@ -54,6 +58,18 @@ namespace ClientCyberAlgo.Service
                 iv = null;
                 return null;
             }
+        }
+
+        public byte[] getAESSharedKey(BigInteger key)
+        {
+            byte[] keyBytes = key.ToByteArray();
+
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedKey = sha256.ComputeHash(keyBytes);
+                return hashedKey;
+            }
+
         }
     }
 }
