@@ -61,7 +61,7 @@ namespace CyberSecurity.Controllers
                 try
                 {
                     // Déchiffrer les données pour obtenir le hash
-                    decryptedHash = privateKey.Decrypt(param.Data, RSAEncryptionPadding.Pkcs1);
+                    decryptedHash = RSAUtils.ReceiveMessageWithRSASignature(privateKey, param.Data);
                 }
                 catch (CryptographicException)
                 {
@@ -94,11 +94,29 @@ namespace CyberSecurity.Controllers
             }
         }
         [HttpPut("cryptWithRSA")]
-        public bool cryptWithRSA()
+        public bool cryptWithRSA([FromBody] byte[] param)
         {
             // todo : le msg est chiffré a l'aide de RSA , la clé publique provient
             // d'un certificat save dans un keystore
-            return true;
+
+            KeystoreLoader keystoreLoader = new KeystoreLoader();
+            keystoreLoader.LoadCertificateFromP12("C:\\Workspace\\School\\MASI1\\CyberSecu\\Labo\\CyberAlgo\\RSAkeystore.p12","destinationPassword");
+
+            if (keystoreLoader.PrivateKey != null)
+            {
+                byte[] byteArray = RSAUtils.ReceiveMessageWithRSASignature(keystoreLoader.PrivateKey, param);
+                string message = Encoding.UTF8.GetString(byteArray);
+                Console.WriteLine(message);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("KeystoreLoader : Private key is null.");
+                return false;
+            }
+            
+            
+            
         }
              
     }
