@@ -16,16 +16,6 @@ namespace ClientCyberAlgo.Service
             }
         }
 
-        public byte[] GenerateSharedSecret()
-        {
-            // Utilisation de ECDiffieHellman sans dépendance à CNG
-            using (ECDiffieHellman ecdh = ECDiffieHellman.Create())
-            {
-                ecdh.KeySize = 256;
-                byte[] publicKey = ecdh.PublicKey.ToByteArray();
-                return publicKey;
-            }
-        }
 
         public string AesEncryptWithSharedKey(string text, byte[] sharedSecret, out string iv)
         {

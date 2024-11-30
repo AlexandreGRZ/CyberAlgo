@@ -5,7 +5,6 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
-using CyberSecurity.Service;
 
 namespace CyberSecurity.Controllers
 {
@@ -80,10 +79,10 @@ namespace CyberSecurity.Controllers
         }
 
         [HttpPut("hashWithSHA1")]
-        public bool hashWithSHA1()
+        public bool hashWithSHA1(string message ,string  hash )
         {
             
-            string calculatedhash =_cryptoService.Sha1Hash(message);
+            string calculatedhash =_crypto_service.Sha1Hash(message);
             Console.WriteLine($"Mot de passe haché : {calculatedhash}");
             Console.WriteLine($"hash reçu : {hash}");
             if (calculatedhash != hash)
@@ -93,25 +92,24 @@ namespace CyberSecurity.Controllers
             
             return true;
         }
-
+          
         [HttpPut("authWithHMAC")]
         public bool authWithHMAC()
         {
-            // TODO : implémenter l'authentification avec HMAC
+            //todo : msg authentifié avec un hmac MD5 la clé peut etre hardcodé 
             return true;
         }
-
         [HttpPut("signedWithSHAandRSA")]
         public bool signedWithSHAandRSA()
         {
             //todo : msg signé avec sha 1 et RSA , clé peuvent eter hardcodé ou transmise sur le réseaux
             return true;
         }
-
         [HttpPut("cryptWithRSA")]
         public bool cryptWithRSA()
         {
-            // TODO : implémenter le chiffrement avec RSA
+            // todo : le msg est chiffré a l'aide de RSA , la clé publique provient
+            // d'un certificat save dans un keystore
             return true;
         }
         [HttpPut("diffieHellman")]
