@@ -1,4 +1,6 @@
-﻿using ClientCyberAlgo.Service;
+﻿using System.Security.Cryptography;
+using ClientCyberAlgo.Service;
+using ClientCyberAlgo.Service.RSA;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClientCyberAlgo.Controllers
@@ -15,6 +17,7 @@ namespace ClientCyberAlgo.Controllers
         {
             _apiService = new ApiService();
             _cryptoService = new CryptoService();
+            
         }
         
         [HttpPut("testApi")]
@@ -23,7 +26,7 @@ namespace ClientCyberAlgo.Controllers
             try
             {
                 Console.WriteLine($"texte : {arg1}");
-                string url = $"https://localhost:7129/api/Home/testApi";
+                string url = $"http://localhost:7129/api/Home/testApi";
                 string responseData = await _apiService.PutDataAsync(url, arg1);
                 Console.WriteLine($"reponse : {responseData} ");
                 return responseData;
@@ -35,17 +38,22 @@ namespace ClientCyberAlgo.Controllers
             }
         }
     
-        [HttpPut("SendHashSha1")]
+        [HttpPut("SendWithSh1AndRSA")]
         public async Task<string> Sha1(string arg1)
         {
             try
             {
+                
+                RSA publicKey = RSAUtils.LoadPublicKey("./Service/RSA/publicKey.pem");
                 Console.WriteLine($"texte avant hachage  : {arg1}");
-                string  msgHash = _cryptoService.Sha1Hash(arg1);
-                Console.WriteLine($"reponse : {msgHash}\t nb bits : {msgHash.Length}");
-            
-                string url = $"https://localhost:7129/api/Home/hashWithSHA1?param="+msgHash;
-                string responseData = await _apiService.PutDataAsync(url, arg1);
+                byte[]  msgHash = _cryptoService.Sha1HashByte(arg1);
+                
+                byte[] encryptedMessage = publicKey.Encrypt(msgHash, RSAEncryptionPadding.Pkcs1);
+                
+                Console.WriteLine("Message chiffré : " + Convert.ToBase64String(encryptedMessage));
+                RSAObjectSend param = new RSAObjectSend(arg1, encryptedMessage);
+                string url = $"http://localhost:7129/api/Home/signedWithSHAandRSA";
+                string responseData = await _apiService.PutDataAsync(url, param);
                 Console.WriteLine($"mdp correspond : {responseData}\t");
                 return responseData;
             }
