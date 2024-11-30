@@ -64,6 +64,29 @@ namespace ClientCyberAlgo.Controllers
             }
         }
 
+        [HttpPut("SendHMAC-MD5")]
+        public async Task<string> sendHMACMD5(string message, int randomNumber, bool authenticated)
+        {
+            double secretKey = await diffiehellman(randomNumber); 
+            
+            string hmac = _cryptoService.GenerateHmac(message, secretKey.ToString());
+
+            if (!authenticated)
+            {
+                 hmac = _cryptoService.GenerateHmac(message, "999" );
+            }
+            Console.WriteLine("Message à envoyer : " + message);
+            Console.WriteLine("HMAC généré : " + hmac);
+            string url = "http://localhost:5274/api/Home/authWithHMAC?message="+message+"&hash="+hmac;
+            string responseData = await _apiService.PutDataAsync(url, null);
+
+            Console.WriteLine($"Réponse du serveur : {responseData}");
+            return responseData;
+            
+        }
+
+        
+
         [HttpPut("SendAESWithDH")]
         public async Task<string> SendAESWithDH(string arg1, int randomNumber)
         {

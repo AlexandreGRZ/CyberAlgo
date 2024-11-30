@@ -26,6 +26,23 @@ public class Crypto_service
                  byte[] hashedKey = sha256.ComputeHash(keyBytes);
                  return hashedKey;
              }
+         }
+         public  bool verifyHmac(string message, string hmac, string secretKey)
+         {
+             
+             Console.WriteLine("HMAC avec clé secrete : "+secretKey);
+             byte[] keyBytes = Encoding.UTF8.GetBytes(secretKey);
+             byte[] messageBytes = Encoding.UTF8.GetBytes(message);
+             string computedHmac;
+             using (var hmacMd5 = new HMACMD5(keyBytes))
+             {
+                 // Calculer le HMAC
+                 byte[] hashBytes = hmacMd5.ComputeHash(messageBytes);
+                 // Convertir en une chaîne hexadécimale
+                 computedHmac =  BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+             }
+             Console.WriteLine("HMAC calculé : "+computedHmac);
 
+             return hmac == computedHmac;
          }
 }

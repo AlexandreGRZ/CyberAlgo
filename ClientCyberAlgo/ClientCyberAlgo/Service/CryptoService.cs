@@ -15,6 +15,20 @@ namespace ClientCyberAlgo.Service
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
         }
+        
+        public  string GenerateHmac(string message, string secretKey)
+        {
+            byte[] keyBytes = Encoding.UTF8.GetBytes(secretKey);
+            byte[] messageBytes = Encoding.UTF8.GetBytes(message);
+
+            using (var hmacMd5 = new HMACMD5(keyBytes))
+            {
+                byte[] hashBytes = hmacMd5.ComputeHash(messageBytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        
 
 
         public string TripleDESEncrypt(string text, string key)

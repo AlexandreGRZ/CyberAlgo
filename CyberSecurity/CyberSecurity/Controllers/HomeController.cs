@@ -128,10 +128,10 @@ namespace CyberSecurity.Controllers
         }
           
         [HttpPut("authWithHMAC")]
-        public bool authWithHMAC()
+        public bool authWithHMAC(string message ,string  hash )
         {
-            //todo : msg authentifié avec un hmac MD5 la clé peut etre hardcodé 
-            return true;
+             
+            return _crypto_service.verifyHmac(message,hash, sharedKey.ToString());
         }
         [HttpPut("signedWithSHAandRSA")]
         public bool signedWithSHAandRSA()
