@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
+using CyberSecurity.Service.RSA;
 
 namespace CyberSecurity.Controllers
 {
@@ -134,17 +135,70 @@ namespace CyberSecurity.Controllers
             return _crypto_service.verifyHmac(message,hash, sharedKey.ToString());
         }
         [HttpPut("signedWithSHAandRSA")]
-        public bool signedWithSHAandRSA()
+        public bool signedWithSHAandRSA([FromBody] RSAObjectSend param)
         {
-            //todo : msg signé avec sha 1 et RSA , clé peuvent eter hardcodé ou transmise sur le réseaux
-            return true;
+            try
+            {
+                // Charger la clé privée pour déchiffrer la signature
+                string privateKeyPath = "./Service/RSA/privateKey.pem";
+                RSA privateKey = RSAUtils.LoadPrivateKey(privateKeyPath);
+
+                // Convertir les données reçues en bytes
+                byte[] decryptedHash;
+                try
+                {
+                    // Déchiffrer les données pour obtenir le hash
+                    decryptedHash = RSAUtils.ReceiveMessageWithRSASignature(privateKey, param.Data);
+                }
+                catch (CryptographicException)
+                {
+                    // Si la décryption échoue, cela signifie que la signature n'est pas valide
+                    Console.WriteLine("Failed to decrypt data, Key Incorrect");
+                    return false;
+                }
+
+                Crypto_service crypto = new Crypto_service();
+
+                byte[] computedHash = Encoding.UTF8.GetBytes(crypto.Sha1Hash(param.Message));
+                // Comparer le hash déchiffré avec le hash calculé
+                bool isValid = decryptedHash.SequenceEqual(computedHash);
+
+                if (isValid)
+                {
+                    Console.WriteLine("La signature et le hash sont valides.");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Le hash SHA-1 ne correspond pas.");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
         [HttpPut("cryptWithRSA")]
-        public bool cryptWithRSA()
+        public bool cryptWithRSA([FromBody] byte[] param)
         {
             // todo : le msg est chiffré a l'aide de RSA , la clé publique provient
             // d'un certificat save dans un keystore
-            return true;
+            KeystoreLoader keystoreLoader = new KeystoreLoader();
+            keystoreLoader.LoadCertificateFromP12("C:\\Workspace\\School\\MASI1\\CyberSecu\\Labo\\CyberAlgo\\RSAkeystore.p12","destinationPassword");
+
+            if (keystoreLoader.PrivateKey != null)
+            {
+                byte[] byteArray = RSAUtils.ReceiveMessageWithRSASignature(keystoreLoader.PrivateKey, param);
+                string message = Encoding.UTF8.GetString(byteArray);
+                Console.WriteLine(message);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("KeystoreLoader : Private key is null.");
+                return false;
+            }
         }
         [HttpPut("diffieHellman")]
         public double diffieHellman(double  publicKey)
