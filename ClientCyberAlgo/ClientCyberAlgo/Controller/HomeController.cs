@@ -155,7 +155,7 @@ namespace ClientCyberAlgo.Controllers
         {
             try
             {
-               BigInteger PublicKey =  BigInteger.ModPow(5, key, 23); ;
+               BigInteger PublicKey =  BigInteger.ModPow(5, key, 23);  //  5^key %23    => clé pub client    clePublic^key%23 
                
                string url = "http://localhost:5274/api/Home/diffieHellman?publicKey="+ PublicKey;
                string responseData = await _apiService.PutDataAsync(url, null);
@@ -206,7 +206,8 @@ namespace ClientCyberAlgo.Controllers
             try
             {
                 KeystoreLoader keystoreLoader = new KeystoreLoader();
-                keystoreLoader.LoadCertificateFromP12("C:\\Workspace\\School\\MASI1\\CyberSecu\\Labo\\CyberAlgo\\RSAkeystore.p12","destinationPassword");
+               // keystoreLoader.LoadCertificateFromP12("C:\\Workspace\\School\\MASI1\\CyberSecu\\Labo\\CyberAlgo\\RSAkeystore.p12","destinationPassword");
+                keystoreLoader.LoadCertificateFromP12("./Service/RSA/RSAkeystore.p12","destinationPassword");
                 Console.WriteLine($"texte : {arg1}");
                 
                 byte[] byteArray = Encoding.UTF8.GetBytes(arg1);
@@ -214,6 +215,7 @@ namespace ClientCyberAlgo.Controllers
                 {
                     byte[] bytesToSend = RSAUtils.SendMessageWithRSASignature(keystoreLoader.PublicKey, byteArray);
                     string url = $"http://localhost:5274/api/Home/cryptWithRSA";
+                    
                     string responseData = await _apiService.PutDataAsync(url, bytesToSend);
                     Console.WriteLine($"reponse : {responseData} ");
                     return responseData;
@@ -230,6 +232,52 @@ namespace ClientCyberAlgo.Controllers
                 Console.WriteLine(ex.Message);
                 return "false"; 
             }
+        }
+
+        [HttpPut("sendCoucou")]
+        public async Task<string> sendCoucou(string msg, int randomNumber)
+        {
+            double secretKey = await diffiehellman(randomNumber); // récup de la clé partagée avec diffie hellamn 
+
+            try
+            {
+                KeystoreLoader keystoreLoader = new KeystoreLoader();
+                // keystoreLoader.LoadCertificateFromP12("C:\\Workspace\\School\\MASI1\\CyberSecu\\Labo\\CyberAlgo\\RSAkeystore.p12","destinationPassword");
+                keystoreLoader.LoadCertificateFromP12("./Service/RSA/RSAkeystore.p12", "destinationPassword");
+                Console.WriteLine($"texte : {msg}");
+
+                byte[] byteArray = Encoding.UTF8.GetBytes(msg);
+                if (keystoreLoader.PublicKey != null)
+                {
+                    byte[] bytesToSend = RSAUtils.SendMessageWithRSASignature(keystoreLoader.PublicKey, byteArray);
+                    Console.WriteLine("apres RSA : "+Convert.ToBase64String(bytesToSend));
+                    
+                    // calcul du hash 
+                    string hmac = _cryptoService.GenerateHmac(msg, secretKey.ToString());
+                    Console.WriteLine("HMAC généré : " + hmac);
+                    
+                    //utilisation de AES
+                    byte[] sharedSecret = _cryptoService.getAESSharedKey(BigInteger.Parse(secretKey.ToString()));
+                    Console.WriteLine($"Clé partagée générée avec Diffie-Hellman : {Convert.ToBase64String(sharedSecret)}");
+                    string iv;
+                    string encryptedMessage = _cryptoService.AesEncryptWithSharedKey(msg, sharedSecret, out iv);
+                    Console.WriteLine($"Message chiffré avec AES  : {encryptedMessage}");
+                    
+                    //encoie vers le serveur 
+                    
+                    coucouModel  cc = new coucouModel(encryptedMessage, bytesToSend,hmac);
+                    
+                    string url = $"http://localhost:5274/api/Home/getCoucou";
+                    string responseData = await _apiService.PutDataAsync(url, cc);
+                    Console.WriteLine($"reponse : {responseData} ");
+                    return "réponse du serveur : + " + responseData;
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return "false";
         }
     }
 }

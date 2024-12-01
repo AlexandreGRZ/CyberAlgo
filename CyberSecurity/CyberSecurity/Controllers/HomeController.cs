@@ -36,7 +36,6 @@ namespace CyberSecurity.Controllers
             {
                 if (string.IsNullOrEmpty(encryptedMessage))
                     return BadRequest("Le message est vide ou invalide.");
-
                 
                 Console.WriteLine("message reçu : " + encryptedMessage);
                 byte[] keyBytes = _crypto_service.getAESSharedKey(sharedKey);
@@ -139,6 +138,8 @@ namespace CyberSecurity.Controllers
         {
             try
             {
+                Console.WriteLine("message recu : "+ param.Message );
+                Console.WriteLine("data recu : "+  Convert.ToBase64String(param.Data));
                 // Charger la clé privée pour déchiffrer la signature
                 string privateKeyPath = "./Service/RSA/privateKey.pem";
                 RSA privateKey = RSAUtils.LoadPrivateKey(privateKeyPath);
@@ -185,7 +186,7 @@ namespace CyberSecurity.Controllers
             // todo : le msg est chiffré a l'aide de RSA , la clé publique provient
             // d'un certificat save dans un keystore
             KeystoreLoader keystoreLoader = new KeystoreLoader();
-            keystoreLoader.LoadCertificateFromP12("C:\\Workspace\\School\\MASI1\\CyberSecu\\Labo\\CyberAlgo\\RSAkeystore.p12","destinationPassword");
+            keystoreLoader.LoadCertificateFromP12("./Service/RSA/RSAKeystore.p12","destinationPassword");
 
             if (keystoreLoader.PrivateKey != null)
             {
@@ -209,6 +210,70 @@ namespace CyberSecurity.Controllers
               sharedKey = BigInteger.ModPow(BigInteger.Parse(publicKey.ToString()), random, 23); 
             Console.WriteLine("clé partagée : "+ sharedKey );
             return Double.Parse(PublicKeyServer.ToString());
+        }
+
+        [HttpPut("getCoucou")]
+        public string sendCoucou([FromBody] coucouModel cc)
+        {
+            Console.WriteLine("(MSG Recu ) message : "+ cc.Message );
+            Console.WriteLine("(MSG Recu ) hash : "+ cc.hash );
+            Console.WriteLine("(MSG Recu ) signature : "+ Convert.ToBase64String( cc.signature ) );
+            
+            Console.WriteLine("message reçu : " + cc.Message );
+            byte[] keyBytes = _crypto_service.getAESSharedKey(sharedKey);
+            Console.WriteLine("clé partagée pour AES encryption : "+ Convert.ToBase64String(keyBytes));
+            Console.WriteLine("longueur clé partagée pour AES encryption : "+ keyBytes.Length);
+            byte[] encryptedBytes = Convert.FromBase64String(cc.Message );
+
+            byte[] ivBytes = encryptedBytes.Take(16).ToArray();
+            byte[] cipherBytes = encryptedBytes.Skip(16).ToArray();
+            string decryptedMessage; 
+            using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
+            {
+                aes.Key = keyBytes;
+                aes.IV = ivBytes;
+                aes.Mode = CipherMode.CBC;
+                aes.Padding = PaddingMode.PKCS7;
+
+                ICryptoTransform decryptor = aes.CreateDecryptor();
+
+                byte[] decryptedBytes = decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
+
+                 decryptedMessage = Encoding.UTF8.GetString(decryptedBytes);
+
+                Console.WriteLine($" (Réponse) Message déchiffré : {decryptedMessage}");
+            }
+            // verification du hash 
+            if (_crypto_service.verifyHmac(decryptedMessage,cc.hash, sharedKey.ToString()))
+            {
+                Console.WriteLine($" (Réponse) Le hash est le meme ");
+            }
+            else
+            {
+                Console.WriteLine($" (Réponse) Le hash est le différent !  ");
+                return "la hash à été modifié ";
+            }
+
+            // verif siganture rsa 
+            KeystoreLoader keystoreLoader = new KeystoreLoader();
+            keystoreLoader.LoadCertificateFromP12("./Service/RSA/RSAKeystore.p12","destinationPassword");
+
+            if (keystoreLoader.PrivateKey != null)
+            {
+                byte[] byteArray = RSAUtils.ReceiveMessageWithRSASignature(keystoreLoader.PrivateKey, cc.signature);
+                string message = Encoding.UTF8.GetString(byteArray);
+                if (message == decryptedMessage)
+                {
+                    Console.WriteLine("La signature est correct.");
+                }
+                else
+                {
+                    return "la signature est incorrect";
+                }
+            }
+
+
+            return "le message : "+ decryptedMessage +" à bien été sécurisé ";
         }
     }
 }
